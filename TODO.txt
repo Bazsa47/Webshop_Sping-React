@@ -1,0 +1,48 @@
+HEADER
+-főoldal
+-ingatlankereső
+-ingatlan hirdetése (L)
+-mentett ingatlanok (L)
+-én ingatlanjaim
+-bejelentkezés, regisztráció, edit profil
+-nyelv?
+
+FOOTER
+-facebook
+-aszf
+-adatvédelem
+-sütik
+-kapcsolat
+
+FŐOLDAL
+
+INGATLANKERESŐ
+-ingatlanok kilistázása (Kép, Cím, Ár)(ÁT : ingatlan/id)
+-csillag mutatja a mentett/kedvenc ingatlant (C)
+-oldal léptetés
+-összehasonlítás
+
+INGATLAN
+-hirdető (ÁT : profil/hirdető)
+-cím (térkép)
+-ár
+-távolság
+-kedvenc (C)
+-leírás
+-vélemények, kérdések (L)
+-terület
+-képek
+-kert
+
+
+PROFIL
+-felhasználónév
+-teljes név
+-email cím
+-telefonszám
+-bemutatkozás
+
+
+
+
+
