@@ -1,8 +1,14 @@
 package com.example.demo.user;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Advertiser")
 public class User {
 
-    private String userId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long userId;
     private String userName;
     private String fullName;
     private String email;
@@ -27,7 +33,7 @@ public class User {
         this.introduction = introduction;
     }
 
-    public User(String userId, String userName, String fullName, String email, String phone, String password, byte role, String profilePicture, String introduction) {
+    public User(long userId, String userName, String fullName, String email, String phone, String password, byte role, String profilePicture, String introduction) {
         this.userId = userId;
         this.userName = userName;
         this.fullName = fullName;
@@ -39,11 +45,11 @@ public class User {
         this.introduction = introduction;
     }
 
-    public String getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 
