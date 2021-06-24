@@ -3,6 +3,7 @@ package com.example.demo.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 @RestController
@@ -22,7 +23,7 @@ public class UserController {
     }
 
     @PostMapping
-    public void registerUser(@RequestBody User u){
+    public void registerUser(@RequestBody User u) throws NoSuchAlgorithmException {
         userService.registerUser(u);
     }
 
@@ -32,14 +33,15 @@ public class UserController {
                            @RequestParam(required = false) String fullName,
                            @RequestParam(required = false) String email,
                            @RequestParam(required = false) String phone,
+                           @RequestParam(required = false) String password,
                            @RequestParam(required = false) String profilePicture,
-                           @RequestParam(required = false) String introduction){
-        userService.updateUser(userId,userName,fullName,email,phone,profilePicture,introduction);
+                           @RequestParam(required = false) String introduction) throws NoSuchAlgorithmException {
+        userService.updateUser(userId,userName,fullName,email,phone,password,profilePicture,introduction);
     }
 
     @DeleteMapping(path = "{userId}")
     public void deleteUser(@PathVariable("userId") long userId){
-        userService.deleteuser(userId);
+        userService.deleteUser(userId);
     }
 
 
