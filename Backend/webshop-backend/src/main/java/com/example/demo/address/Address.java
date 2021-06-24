@@ -1,8 +1,13 @@
-package com.example.demo.property;
+package com.example.demo.address;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Address {
-
-    private int addressId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long addressId;
     private String country;
     private String city;
     private String street;
@@ -26,11 +31,11 @@ public class Address {
         this.houseNumber = houseNumber;
     }
 
-    public int getAddressId() {
+    public long getAddressId() {
         return addressId;
     }
 
-    public void setAddressId(int addressId) {
+    public void setAddressId(long addressId) {
         this.addressId = addressId;
     }
 

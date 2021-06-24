@@ -64,11 +64,12 @@ public class UserService {
         userRepository.deleteById(userId);
     }
 
-    private boolean isValid(String value){
+    public boolean isValid(String value){
         return value != null && value.trim() != "";
     }
 
-    private boolean isEmail(String email){
+    public boolean isEmail(String email){
         return EmailValidator.getInstance().isValid(email);
     }
+
 }

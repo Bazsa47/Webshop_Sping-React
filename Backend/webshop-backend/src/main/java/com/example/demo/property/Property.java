@@ -1,22 +1,30 @@
 package com.example.demo.property;
 
-public class Property {
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-    private String propertyId;
+import javax.persistence.*;
+
+@Entity
+@Table
+public class Property {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long propertyId;
     private int price;
-    private int area;
+    private Integer area;
     private boolean garden;
     private byte rooms;
     private boolean clime;
     private boolean balcony;
     private String heating;
-    private String advertiserId;
-    private Address address;
+    private long advertiserId;
+    private long addressId;
+
 
     public Property() {
     }
 
-    public Property(int price, int area, boolean garden, byte rooms, boolean clime, boolean balcony, String heating, String advertiserId, Address address) {
+    public Property(int price, int area, boolean garden, byte rooms, boolean clime, boolean balcony, String heating, long advertiserId, long addressId) {
         this.price = price;
         this.area = area;
         this.garden = garden;
@@ -25,10 +33,10 @@ public class Property {
         this.balcony = balcony;
         this.heating = heating;
         this.advertiserId = advertiserId;
-        this.address = address;
+        this.addressId = addressId;
     }
 
-    public Property(String propertyId, int price, int area, boolean garden, byte rooms, boolean clime, boolean balcony, String heating, String advertiserId, Address address) {
+    public Property(long propertyId, int price, int area, boolean garden, byte rooms, boolean clime, boolean balcony, String heating, long advertiserId, long addressId) {
         this.propertyId = propertyId;
         this.price = price;
         this.area = area;
@@ -38,14 +46,14 @@ public class Property {
         this.balcony = balcony;
         this.heating = heating;
         this.advertiserId = advertiserId;
-        this.address = address;
+        this.addressId = addressId;
     }
 
-    public String getPropertyId() {
+    public long getPropertyId() {
         return propertyId;
     }
 
-    public void setPropertyId(String propertyId) {
+    public void setPropertyId(long propertyId) {
         this.propertyId = propertyId;
     }
 
@@ -65,7 +73,7 @@ public class Property {
         this.area = area;
     }
 
-    public boolean isGarden() {
+    public boolean getGarden() {
         return garden;
     }
 
@@ -81,7 +89,7 @@ public class Property {
         this.rooms = rooms;
     }
 
-    public boolean isClime() {
+    public boolean getClime() {
         return clime;
     }
 
@@ -89,7 +97,7 @@ public class Property {
         this.clime = clime;
     }
 
-    public boolean isBalcony() {
+    public boolean getBalcony() {
         return balcony;
     }
 
@@ -105,20 +113,21 @@ public class Property {
         this.heating = heating;
     }
 
-    public String getAdvertiserId() {
+    public long getAdvertiserId() {
         return advertiserId;
     }
 
-    public void setAdvertiserId(String advertiserId) {
+    public void setAdvertiserId(long advertiserId) {
         this.advertiserId = advertiserId;
     }
 
-    public Address getAddress() {
-        return address;
+
+    public long getAddressId() {
+        return addressId;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAddressId(long addressId) {
+        this.addressId = addressId;
     }
 
     @Override
@@ -133,7 +142,6 @@ public class Property {
                 ", balcony=" + balcony +
                 ", heating='" + heating + '\'' +
                 ", advertiserId='" + advertiserId + '\'' +
-                ", address=" + address +
                 '}';
     }
 }
