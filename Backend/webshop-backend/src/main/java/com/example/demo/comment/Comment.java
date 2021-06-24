@@ -1,8 +1,14 @@
 package com.example.demo.comment;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Comment {
 
-    private int commentId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long commentId;
     private String propertyId;
     private String userId;
     private String text;
@@ -26,11 +32,11 @@ public class Comment {
         this.parentCommentId = parentCommentId;
     }
 
-    public int getCommentId() {
+    public long getCommentId() {
         return commentId;
     }
 
-    public void setCommentId(int commentId) {
+    public void setCommentId(long commentId) {
         this.commentId = commentId;
     }
 
