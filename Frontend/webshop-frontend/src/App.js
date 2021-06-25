@@ -1,4 +1,4 @@
-import './App.css';
+import './Style/App.css';
 import React from 'react';
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom';
 import Nav from './Components/Nav';
@@ -6,12 +6,14 @@ import Home from './Components/Home';
 import Properties from './Components/Properties';
 import Favourites from './Components/Favourites';
 import Auth from './Components/Auth';
+import placeholder from "./Style/img/sample.jpg"
 
 function App() {
   return (
     <div className="App">
+             <img src={placeholder} alt="" className ="mainImg"/>
       <Router>
-        <div className="app">
+        <div className="container">
           <Nav/>
           <Switch>
             <Route path = "/" exact component= {Home}/>

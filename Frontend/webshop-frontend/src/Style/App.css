@@ -1,0 +1,54 @@
+body {
+  background-image: -webkit-gradient(linear, right top, left top, from(#BDBBBE), to(#9D9EA3)), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+  background-blend-mode: normal, lighten, soft-light;
+}
+
+.App {
+  overflow: hidden;
+}
+
+.nav {
+  background-color: #00d525;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  width: 80%;
+  margin: 0 10%;
+}
+
+.nav ul {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.nav ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+.mainImg {
+  max-height: 500px;
+  width: 100%;
+  height: 40%;
+  margin-left: 0%;
+  margin-top: -10%;
+  margin-bottom: -10%;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(black), to(rgba(0, 0, 0, 0)));
+  -webkit-mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+          mask-image: -webkit-gradient(linear, left top, left bottom, from(black), to(rgba(0, 0, 0, 0)));
+          mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+  border-radius: 30%;
+}
+/*# sourceMappingURL=App.css.map */

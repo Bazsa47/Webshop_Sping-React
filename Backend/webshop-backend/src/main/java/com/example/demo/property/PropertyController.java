@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path ="/property")
-@CrossOrigin(origins=Constants.WEB_URL)
+@CrossOrigin(origins="http://localhost:3000")
 public class PropertyController {
 
     private final PropertyService propertyService;
