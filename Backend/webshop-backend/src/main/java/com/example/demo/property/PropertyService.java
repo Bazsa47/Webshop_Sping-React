@@ -1,13 +1,9 @@
 package com.example.demo.property;
 
-import com.example.demo.address.Address;
-import com.example.demo.address.AddressRepository;
-import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,5 +48,10 @@ public class PropertyService {
 
     public boolean isValid(Object value){
         return value.toString() != null && value.toString().trim() != "";
+    }
+
+    public Optional<Property> getPropertyById(long propertyId) {
+        if (!propertyRepository.findById(propertyId).isPresent()) throw new  IllegalStateException("Property id does not exist!");
+        return propertyRepository.findById(propertyId);
     }
 }

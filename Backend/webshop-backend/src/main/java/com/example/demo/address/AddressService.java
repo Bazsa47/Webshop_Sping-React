@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AddressService {
@@ -42,5 +43,10 @@ public class AddressService {
 
     public boolean isValid(String value){
         return value != null && value.trim() != "";
+    }
+
+    public Optional<Address> getAddressById(long addressId) {
+        if (!addressRepository.findById(addressId).isPresent()) throw new IllegalStateException("Addres id does not exist!");
+        return addressRepository.findById(addressId);
     }
 }

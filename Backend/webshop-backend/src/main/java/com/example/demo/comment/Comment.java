@@ -9,27 +9,27 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long commentId;
-    private String propertyId;
-    private String userId;
+    private long propertyId;
+    private long userId;
     private String text;
-    private int parentCommentId;
+    private long parentCommentId;
+
+    public Comment(long commentId, long propertyId, long userId,String text,long parentCommentId) {
+        this.setCommentId(commentId);
+        this.setPropertyId(propertyId);
+        this.setUserId(userId);
+        this.setText(text);
+        this.setParentCommentId(parentCommentId);
+    }
+
+    public Comment(long propertyId, long userId,String text,long parentCommentId) {
+        this.setPropertyId(propertyId);
+        this.setUserId(userId);
+        this.setText(text);
+        this.setParentCommentId(parentCommentId);
+    }
 
     public Comment() {
-    }
-
-    public Comment(String propertyId, String userId, String text, int parentCommentId) {
-        this.propertyId = propertyId;
-        this.userId = userId;
-        this.text = text;
-        this.parentCommentId = parentCommentId;
-    }
-
-    public Comment(int commentId, String propertyId, String userId, String text, int parentCommentId) {
-        this.commentId = commentId;
-        this.propertyId = propertyId;
-        this.userId = userId;
-        this.text = text;
-        this.parentCommentId = parentCommentId;
     }
 
     public long getCommentId() {
@@ -40,19 +40,19 @@ public class Comment {
         this.commentId = commentId;
     }
 
-    public String getPropertyId() {
+    public long getPropertyId() {
         return propertyId;
     }
 
-    public void setPropertyId(String propertyId) {
+    public void setPropertyId(long propertyId) {
         this.propertyId = propertyId;
     }
 
-    public String getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 
@@ -64,11 +64,11 @@ public class Comment {
         this.text = text;
     }
 
-    public int getParentCommentId() {
+    public long getParentCommentId() {
         return parentCommentId;
     }
 
-    public void setParentCommentId(int parentCommentId) {
+    public void setParentCommentId(long parentCommentId) {
         this.parentCommentId = parentCommentId;
     }
 

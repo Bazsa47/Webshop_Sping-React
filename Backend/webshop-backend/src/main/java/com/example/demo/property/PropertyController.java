@@ -1,13 +1,15 @@
 package com.example.demo.property;
 
-import com.example.demo.address.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import com.example.demo.functions.Constants;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path ="/property")
+@CrossOrigin(origins=Constants.WEB_URL)
 public class PropertyController {
 
     private final PropertyService propertyService;
@@ -20,6 +22,11 @@ public class PropertyController {
     @GetMapping
     public List<Property> getProperties(){
         return propertyService.getProperties();
+    }
+
+    @GetMapping(path = "{propertyId}")
+    public Optional<Property> getPropertyById(@PathVariable("propertyId") long propertyId){
+        return propertyService.getPropertyById(propertyId);
     }
 
     @PostMapping

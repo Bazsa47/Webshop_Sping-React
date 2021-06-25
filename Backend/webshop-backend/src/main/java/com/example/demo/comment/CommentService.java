@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CommentService {
@@ -26,5 +27,10 @@ public class CommentService {
     public void deleteComment(long commentId) {
         if (!commentRepository.findById(commentId).isPresent()) throw new IllegalStateException("Comment id does not exist!");
         commentRepository.deleteById(commentId);
+    }
+
+    public Optional<Comment> getCommentById(long commentId) {
+        if (!commentRepository.findById(commentId).isPresent()) throw new  IllegalStateException("User id does not exist!");
+        return commentRepository.findById(commentId);
     }
 }

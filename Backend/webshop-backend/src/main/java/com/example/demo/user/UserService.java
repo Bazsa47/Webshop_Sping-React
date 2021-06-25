@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -72,4 +73,8 @@ public class UserService {
         return EmailValidator.getInstance().isValid(email);
     }
 
+    public Optional<User> getUserById(long userId) {
+        if (!userRepository.findById(userId).isPresent()) throw new  IllegalStateException("User id does not exist!");
+        return userRepository.findById(userId);
+    }
 }

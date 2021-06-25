@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/user")
@@ -20,6 +21,11 @@ public class UserController {
     @GetMapping
     public List<User> getUsers(){
         return userService.getUsers();
+    }
+
+    @GetMapping(path = "{userId}")
+    public Optional<User> getUserById(@PathVariable("userId") long userId){
+        return userService.getUserById(userId);
     }
 
     @PostMapping
