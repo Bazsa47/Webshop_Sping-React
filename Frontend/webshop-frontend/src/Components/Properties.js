@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import * as Constants from '../Functions/Constants.js';
 import Property from './Property';
+import Filter from './Filter';
 
 const Properties = () => {
 
@@ -26,13 +27,14 @@ const Properties = () => {
    
     return(
         <div className="propertiesPage">
-            <h1>PROPERTIES</h1>
+        <Filter/>
+        <div className="propertiesContainer">
             {properties.map(property => (
-                <div key={property.propertyId}>
+                
                     <Property  price={property.price}/>
-                    {console.log(properties)}
-                </div>
+                
             ))}
+        </div>
         </div>
     );
 }

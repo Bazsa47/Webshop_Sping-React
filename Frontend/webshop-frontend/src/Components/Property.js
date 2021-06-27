@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import houseph from '../img/houseph.jpg';
 
 const Property = ({price}) => {
     return(
         <div className="propertyCard">
-            <p>
-                {price}
-            </p>
+            <img src={houseph} alt="" className="propertyCardImg"/>
+            <p>{price} FT</p>
+            <p>City</p>
+                
         </div>   
     );
 }

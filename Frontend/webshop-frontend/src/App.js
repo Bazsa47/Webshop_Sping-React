@@ -6,12 +6,10 @@ import Home from './Components/Home';
 import Properties from './Components/Properties';
 import Favourites from './Components/Favourites';
 import Auth from './Components/Auth';
-import placeholder from "./Style/img/sample.jpg"
 
 function App() {
   return (
     <div className="App">
-             <img src={placeholder} alt="" className ="mainImg"/>
       <Router>
         <div className="container">
           <Nav/>
