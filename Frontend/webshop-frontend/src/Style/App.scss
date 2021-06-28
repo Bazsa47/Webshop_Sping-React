@@ -37,10 +37,7 @@ body{
             background-color: black;
             
         }
-
-
     }
-   
 
     .nav-bar{
         display:flex;
@@ -56,7 +53,15 @@ body{
             justify-content: space-around;
             align-items: center;
             width : 100%;
+
+            a{
+                text-decoration: none;
+                font-size: 3vh;
+                color: black;
+            }
+
             .navElement{
+                text-decoration: none;
                 position: flex;
                 width : 10vw;
                 text-align: center;
@@ -67,7 +72,6 @@ body{
                     cursor: pointer;
                     background-color: #05fe56;
                     overflow: visible;
-                    
                 }
                 
             }

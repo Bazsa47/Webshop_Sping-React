@@ -82,7 +82,14 @@ body {
   width: 100%;
 }
 
+.nav .nav-bar .navElementContainer a {
+  text-decoration: none;
+  font-size: 3vh;
+  color: black;
+}
+
 .nav .nav-bar .navElementContainer .navElement {
+  text-decoration: none;
   position: flex;
   width: 10vw;
   text-align: center;

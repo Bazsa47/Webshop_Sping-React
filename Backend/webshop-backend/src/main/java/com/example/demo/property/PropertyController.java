@@ -7,9 +7,9 @@ import com.example.demo.functions.Constants;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins="http://localhost:3000")
 @RestController
 @RequestMapping(path ="/property")
-@CrossOrigin(origins="http://localhost:3000")
 public class PropertyController {
 
     private final PropertyService propertyService;
