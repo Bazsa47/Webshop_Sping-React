@@ -1,17 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import houseph from '../img/houseph.jpg';
 
-const Property = ({price,city}) => {
+const Property = ({prop}) => {
     return(
-        <Link to={`/property/id`}>
-        <div className="propertyCard">
-            <img src={houseph} alt="" className="propertyCardImg"/>
-            <p>{price} FT</p>
-            <p>{city}</p>
-                
-        </div>   
-        </Link>
+
+            <div className="propertyCard">
+                <img src={houseph} alt="" className="propertyCardImg"/>
+                <p>{prop.price} FT</p>
+                <p>{prop.city}</p>                   
+            </div>   
+
     );
 }
 

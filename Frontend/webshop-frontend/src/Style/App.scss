@@ -58,6 +58,9 @@ body{
                 text-decoration: none;
                 font-size: 3vh;
                 color: black;
+                &:active{
+                    color: black;
+                }
             }
 
             .navElement{
@@ -117,6 +120,68 @@ body{
     }
 }
 
+.propertyItem{
+    width:80%;
+    margin: 0% 10%;
+    display: flex;
+    align-items: center;
+    .propertyCard{
+        @include growAnim(1.1);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width:300px;
+        margin: 2.5%;
+        position: relative;
+        float:left;
+        background-color: white;
+
+        .propertyCardImg{
+            width:100%;
+            height:auto;
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.authContainer{
+    background-color: white;
+    width: 70%;
+    height: auto;
+    margin: 5% 15%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    .logIn{
+        width:50%;
+        background-color: #05fe56;
+        text-align: center;
+
+        input{
+            width: 50%;
+            height: 5%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    }
+    .register{
+        width:50%;
+        background-color: $page-green;
+        text-align: center;
+
+
+        input{
+            width: 50%;
+            height: 5%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        textarea{
+            width: 60%;
+            height:100px;
+            resize: none;
+        }
+    }
+}
 
 
 

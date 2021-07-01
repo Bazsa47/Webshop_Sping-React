@@ -88,6 +88,10 @@ body {
   color: black;
 }
 
+.nav .nav-bar .navElementContainer a:active {
+  color: black;
+}
+
 .nav .nav-bar .navElementContainer .navElement {
   text-decoration: none;
   position: flex;
@@ -148,5 +152,86 @@ body {
 
 .propertiesPage .propertiesContainer .propertyCard:hover {
   cursor: pointer;
+}
+
+.propertyItem {
+  width: 80%;
+  margin: 0% 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.propertyItem .propertyCard {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 300px;
+  margin: 2.5%;
+  position: relative;
+  float: left;
+  background-color: white;
+}
+
+.propertyItem .propertyCard:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.propertyItem .propertyCard .propertyCardImg {
+  width: 100%;
+  height: auto;
+}
+
+.propertyItem .propertyCard:hover {
+  cursor: pointer;
+}
+
+.authContainer {
+  background-color: white;
+  width: 70%;
+  height: auto;
+  margin: 5% 15%;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.authContainer .logIn {
+  width: 50%;
+  background-color: #05fe56;
+  text-align: center;
+}
+
+.authContainer .logIn input {
+  width: 50%;
+  height: 5%;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.authContainer .register {
+  width: 50%;
+  background-color: #00d525;
+  text-align: center;
+}
+
+.authContainer .register input {
+  width: 50%;
+  height: 5%;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.authContainer .register textarea {
+  width: 60%;
+  height: 100px;
+  resize: none;
 }
 /*# sourceMappingURL=App.css.map */

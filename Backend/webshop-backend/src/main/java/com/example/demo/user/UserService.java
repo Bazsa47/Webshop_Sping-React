@@ -1,15 +1,22 @@
 package com.example.demo.user;
 
 import org.apache.commons.validator.routines.EmailValidator;
+import org.apache.http.entity.ContentType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
+import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class UserService {
@@ -76,5 +83,38 @@ public class UserService {
     public Optional<User> getUserById(long userId) {
         if (!userRepository.findById(userId).isPresent()) throw new  IllegalStateException("User id does not exist!");
         return userRepository.findById(userId);
+    }
+
+
+    public void uploadProfilePicture(long userId, MultipartFile file) throws IOException {
+        if (file.isEmpty()) throw new IllegalStateException("Can not upload empty file");
+        //if (!Arrays.asList(ContentType.IMAGE_JPEG,ContentType.IMAGE_PNG,ContentType.IMAGE_GIF,ContentType.IMAGE_SVG).contains(file.getContentType())) throw new IllegalStateException("Not an image");
+        if (userRepository.findById(userId).isEmpty()) throw new IllegalStateException("User does not exist");
+
+        Map<String, String> metaData = new HashMap<>();
+        metaData.put("Content-Type",file.getContentType());
+        metaData.put("Content-Length",String.valueOf(file.getSize()));
+
+        String folder = "C:\\Users\\balaz\\OneDrive\\Asztali gép\\Projektek\\Webshop_Spring-React\\Backend\\webshop-backend\\src\\main\\resources\\img\\";
+        byte[] bytes = file.getBytes();
+        Path path = Paths.get(folder +generateRandomString(15) + ".png");
+        Files.write(path,bytes);
+        updateUserProfilePicture(userId,path.toString());
+    }
+
+    @Transactional
+    public void updateUserProfilePicture(Long userId, String path){
+        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalStateException("No such user"));
+        user.setProfilePicture(path);
+    }
+
+    private String generateRandomString(int size){
+        String input = "abcdefghijklmnopqrstuvwxyz0123456789";
+        String output = "";
+        for (int i = 0; i < size; i++) {
+            output += input.charAt(new Random().nextInt(input.length()));
+        }
+
+        return output;
     }
 }

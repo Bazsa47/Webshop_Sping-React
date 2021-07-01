@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react';
+import { Link } from 'react-router-dom';
 import * as Constants from '../Functions/Constants.js';
 import Property from './Property';
 import Filter from './Filter';
@@ -37,7 +38,9 @@ const Properties = () => {
             <Filter/>
             <div className="propertiesContainer">
             {properties.map(property => (  
-                <Property key={property.propertyId} price={property.price} city={property.city}/>      
+                <Link to={`/property/${property.propertyId}`}>
+                    <Property key={property.propertyId} prop={property}/>    
+                </Link>  
             ))}
             </div>
         </div>
