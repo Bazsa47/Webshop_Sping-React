@@ -3,19 +3,42 @@ package com.example.demo.user;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Advertiser")
+@Table(
+        name = "Advertiser",
+        uniqueConstraints = {
+            @UniqueConstraint(name = "UQ_user",columnNames = {
+                    "userName","email","phone",
+            })
+        }
+)
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long userId;
+
+    @Column(nullable = false)
     private String userName;
+
+    @Column(nullable = false)
     private String fullName;
+
+    @Column(nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String phone;
+
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String password;
+
+    @Column(nullable = false)
     private byte role;
+
+    @Column(columnDefinition = "TEXT")
     private String profilePicture;
+
+    @Column(columnDefinition = "TEXT")
     private String introduction;
 
 

@@ -10,14 +10,32 @@ public class Property {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long propertyId;
+
+    @Column(nullable = false)
     private int price;
+
+    @Column(nullable = false)
     private Integer area;
+
+    @Column(nullable = false)
     private boolean garden;
+
+    @Column(nullable = false)
     private byte rooms;
+
+    @Column(nullable = false)
     private boolean clime;
+
+    @Column(nullable = false)
     private boolean balcony;
+
+    @Column(nullable = false)
     private String heating;
+
+    @Column(nullable = false)
     private long advertiserId;
+
+    @Column(nullable = false)
     private long addressId;
 
 

@@ -9,9 +9,16 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long commentId;
+
+    @Column(nullable = false)
     private long propertyId;
+
+    @Column(nullable = false)
     private long userId;
+
+    @Column(nullable = false,columnDefinition = "TEXT")
     private String text;
+
     private long parentCommentId;
 
     public Comment(long commentId, long propertyId, long userId,String text,long parentCommentId) {
